@@ -17,8 +17,9 @@ from pathlib import Path
 import glob 
 
 all_files = set() 
-my_path = ".\\Pictures" 
-files = glob.glob(my_path + '/**/*.*', recursive=True) 
+my_path = ".\\Pictures"
+files = glob.glob(my_path + '/**/*.*', recursive=True)  
+
 for file in files: 
     path_file = Path(file) 
     file_name = path_file.name 
