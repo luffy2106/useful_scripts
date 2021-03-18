@@ -28,3 +28,33 @@ for file in files:
     else: 
         rem_file = Path(file) 
         rem_file.unlink() 
+
+
+## Draw list of bounding bounding box from list of coordinator
+import cv2\
+from google.colab.patches import cv2_imshow\
+def show_bounding_boxs(image_path, list_bounding_box):\
+  """\
+  Each bouding box in the list is : x0,y0,x1,y1, which follow the standard of\
+  openCV\
+  """\
+  image = cv2.imread(path)\
+  #Blue color in BGR\ 
+  color = (255, 0, 0)\
+  #Line thickness of 2 px\ 
+  thickness = 2\
+  for box in list_bounding_box:\  
+    start_point = (box[0], box[1])\  
+    end_point = (box[2], box[3])\    
+    # Using cv2.rectangle() method\  
+    # Draw a rectangle with blue line borders of thickness of 2 px\  
+    image = cv2.rectangle(image, start_point, end_point, color, thickness)\ 
+    # if you use openCV\
+    # cv2.imshow('image',image)\ 
+    # if you use google colab\ 
+    cv2_imshow(image)\ 
+
+path = "V-216B-131-A-873_005_001-105.jpg"\
+list_bounding_box = [(5,5,220,220)]\
+show_bounding_boxs(path, list_bounding_box)\
+
