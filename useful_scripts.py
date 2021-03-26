@@ -57,3 +57,9 @@ def show_bounding_boxs(image_path, list_bounding_box):
 path = "V-216B-131-A-873_005_001-105.jpg"
 list_bounding_box = [(5,5,220,220)]
 show_bounding_boxs(path, list_bounding_box)
+
+
+"""
+Tips for VScode
+"""
+- https://medium.com/@i_AnkurBiswas/pro-tips-for-visual-studio-code-to-be-productive-in-2018-d5252e914561
