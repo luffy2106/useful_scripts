@@ -65,3 +65,17 @@ show_bounding_boxs(path, list_bounding_box)
 Tips for VScode
 """
 - https://medium.com/@i_AnkurBiswas/pro-tips-for-visual-studio-code-to-be-productive-in-2018-d5252e914561
+
+
+"""
+Transfer files between server and host
+"""
+Download file from server to local
+- (Go to location on the local computer):scp ecatdeployv2@172.16.255.27:/etc/systemd/system/log_back_20.7.txt . 
+Upload file from local to server
+- (Go to location on the local computer):scp /file/to/send username@remote:/where/to/put
+
+
+
+
+
