@@ -76,6 +76,7 @@ Upload file from local to server
 - (Go to location on the local computer):scp /file/to/send username@remote:/where/to/put
 
 
+Set permanent DNS server in Ubuntu(To avoid wifi can not access in ubuntu)
 
-
+https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/
 
