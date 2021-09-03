@@ -13,7 +13,7 @@ jupyter lab --no-browser --ip="0.0.0.0" --port=9874 --NotebookApp.token='' --Not
 """
 Check to see to reasearch on if cuda and pytorch is compatible
 """
-python -m detectron2.util.collect_env
+python -m detectron2.utils.collect_env
 
 
 
