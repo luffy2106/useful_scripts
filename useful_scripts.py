@@ -90,4 +90,10 @@ Set permanent DNS server in Ubuntu(To avoid wifi can not access in ubuntu)
 
 https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/
 
+"""
+Tool to preview image in the console linux
+"""
+
+https://linoxide.com/terminology-terminal/
+
 
