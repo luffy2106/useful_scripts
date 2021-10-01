@@ -91,9 +91,9 @@ Set permanent DNS server in Ubuntu(To avoid wifi can not access in ubuntu)
 https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/
 
 """
-Tool to preview image in the console linux
+Set up remote ssh along with key vscode
 """
 
-https://linoxide.com/terminology-terminal/
+https://towardsdatascience.com/5-steps-setup-vs-code-for-remote-development-via-ssh-from-windows-to-linux-b9bae9e8f904
 
 
