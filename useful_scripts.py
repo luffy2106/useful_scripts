@@ -1,4 +1,16 @@
 """
+Install pyenv : to manage python package
+"""
+
+https://ggkbase-help.berkeley.edu/how-to/install-pyenv/
+
+After set python version you want to global, remember to install pipenv
+
+pip install pipenv
+
+
+
+"""
 Virtual environments jupyterlab
 """
 pip freeze > requirements.txt
