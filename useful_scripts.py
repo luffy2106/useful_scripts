@@ -33,7 +33,31 @@ Check to see to reasearch on if cuda and pytorch is compatible
 """
 python -m detectron2.utils.collect_env
 
+"""
+This code convert pil images to bytes and vice versa. It's important when you want to save image
+to ram then send to API to process.
 
+Follow this tutor:
+https://jdhao.github.io/2019/07/06/python_opencv_pil_image_to_bytes/
+"""
+
+from PIL import Image
+import io
+
+# creating a image object
+img = Image.open(".\data\dog.jpg")
+
+# convert pil image to bytes
+im_resize = img.resize(img.size)
+buf = io.BytesIO()
+im_resize.save(buf, format='JPEG')
+byte_im = buf.getvalue()
+
+print(byte_im)
+
+# convert bytes to pil image object
+image = Image.open(io.BytesIO(byte_im))
+image.show()
 
 
 
