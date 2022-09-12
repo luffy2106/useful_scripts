@@ -1,4 +1,34 @@
 """
+Force Reconfigure or remove broken package
+"""
+# Reconfigure DPKG, the base package management system, with the following command:
+
+sudo dpkg --configure -a
+
+# Check if DPKG marked some packages as needing a reinstall.
+
+sudo dpkg -l | grep ^..R
+
+# If the command above returns a list of one or more packages, try removing the packages by typing:
+
+sudo dpkg --purge --force-all libgbm1
+
+# After you finish troubleshooting, run the following command to clean up the system:
+
+sudo apt clean
+
+# Then update the repositories:
+
+sudo apt update
+
+# Then upgrade the repositories:
+
+sudo apt upgrade
+
+
+
+
+"""
 Install pyenv : to manage python package
 """
 
