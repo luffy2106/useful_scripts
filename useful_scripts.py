@@ -32,7 +32,7 @@ sudo apt upgrade
 Install pyenv : to manage python package
 """
 
-https://ggkbase-help.berkeley.edu/how-to/install-pyenv/
+https://www.liquidweb.com/kb/how-to-install-pyenv-on-ubuntu-18-04/
 
 After set python version you want to global, remember to install pipenv
 
