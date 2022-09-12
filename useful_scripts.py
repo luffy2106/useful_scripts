@@ -8,6 +8,12 @@ After set python version you want to global, remember to install pipenv
 
 pip install pipenv
 
+"""
+Enable GPU on WSL2 Window:
+
+https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu
+"""
+
 
 
 """
