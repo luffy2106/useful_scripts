@@ -153,8 +153,10 @@ Transfer files between server and host
 """
 Download file from server to local
 - (Go to location on the local computer):scp ecatdeployv2@172.16.255.27:/etc/systemd/system/log_back_20.7.txt . 
+- In case you have a large folder, it's better to compress and send it by tar : tar zcvf - MyBackups | ssh user@server "cat > ~/Research_e-catalog/classification_section_3/data/foo.tgz"
 Upload file from local to server
 - (Go to location on the local computer):scp /file/to/send username@remote:/where/to/put
+
 
 """
 Set permanent DNS server in Ubuntu(To avoid wifi can not access in ubuntu)
