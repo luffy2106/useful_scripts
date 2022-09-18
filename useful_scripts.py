@@ -1,5 +1,5 @@
 """
-Force Reconfigure or remove broken package
+Force Reconfigure or remove broken package in linux
 """
 # Reconfigure DPKG, the base package management system, with the following command:
 
