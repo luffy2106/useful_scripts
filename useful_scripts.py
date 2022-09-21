@@ -31,6 +31,15 @@ Create symbolic link in linux
 https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/
 
 
+"""
+Install pipreques:
+
+A very useful package when a phase of development is done, Generating concise requirements is done automatically (it looks at the packages you're importing in your project directory): https://pypi.org/project/pipreqs/
+
+It's much better and more efficient than "pip freeze"
+"""
+https://pypi.org/project/pipreqs/
+    
 
 """
 Install pyenv : to manage python package
