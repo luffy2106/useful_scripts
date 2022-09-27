@@ -170,6 +170,8 @@ Download file from server to local
 Upload file from local to server
 - (Go to location on the local computer):scp /file/to/send username@remote:/where/to/put
 
+Another way : Use FileZilla (support skip if files are already exists)
+
 
 """
 Set permanent DNS server in Ubuntu(To avoid wifi can not access in ubuntu)
