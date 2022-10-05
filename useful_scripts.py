@@ -30,6 +30,18 @@ Create symbolic link in linux
 """
 https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/
 
+    
+"""
+Fix missing and broken packages in linux
+"""
+Method 1 : 
+# Use the "fix-missing" option with "apt-get update" to run the updates and ensure the packages are up to date and there is no new version available for the packages.
+sudo apt-get update --fix-missing
+# Once you are done with the update, execute the below command in order to force the package manager to find any missing dependencies or broken packages and install them.
+sudo apt-get install -f
+
+Other method, check this link : https://linuxhint.com/apt_get_fix_missing_broken_packages/
+
 
 """
 Install pipreques:
