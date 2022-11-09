@@ -59,10 +59,13 @@ Install pyenv : to manage python package
 
 https://www.liquidweb.com/kb/how-to-install-pyenv-on-ubuntu-18-04/
 
+In case you have errors while install lib for virutal env which is related to vendored-six
+Solution 1:
 After set python version you want to global, remember to install pipenv
-
 pip install pipenv
 
+Solution 2:
+https://bnikolic.co.uk/blog/python/pip/2022/02/21/vendored-six.html
 """
 Enable GPU on WSL2 Window:
 
