@@ -66,13 +66,31 @@ pip install pipenv
 
 Solution 2:
 https://bnikolic.co.uk/blog/python/pip/2022/02/21/vendored-six.html
+
 """
-Enable GPU on WSL2 Window:
-
-https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu
+Enable GPU and install on WSL2 Window
 """
+Solution 1(do not work 100%):
+- https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu
 
-
+Solution 2(work 100%, remember that install pytorch version which is suitable for cuda) 
+* 1st install nvidia driver on windows 
+* 2nd remove all nvidia files from WSL2: 
+sudo apt-get --purge remove "*cublas*" "*cufft*" "*curand*" \ "*cusolver*" "*cusparse*" "*npp*" "*nvjpeg*" "cuda*" "nsight*"  
+sudo apt-get --purge remove "*nvidia*"  
+sudo rm -rf /usr/local/cuda*  
+sudo apt-key del 7fa2af80  
+sudo apt-get autoremove
+sudo apt-get update 
+* 3rd download and install cuda-11.6 run from : 
+https://developer.nvidia.com/cuda-11-6-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=runfile_local 
+* After cuda installations: 
+sudo apt-get install build-essential cmake 
+* Open .bashrc file and add cuda path: 
+export LD_LIBRARY_PATH="/usr/local/cuda-11.6/libnvvp:$LD_LIBRARY_PATH"  
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-11.6/bin:$PATH" 
+* Install pytorch for cuda 11.6: 
+pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116 
 
 """
 Virtual environments jupyterlab
