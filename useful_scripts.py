@@ -246,5 +246,14 @@ python interpreter (thong qua bien envFile) va file ban muon debug (thong qua bi
         }
     ]
 }
+
+"""
+Create symbolic link
+"""
+ln -s [Source_File_Path] [Symbolic_Link_Path]
+
+ln -s /data/E-cataloging-product-data/virtualenv /home/tkdang/E-cataloging-product/e-cataloging-pipe
+
+After this command, in e-cataloging-pipe folder there will be a symbolic link named virtualenv, which link to /data/E-cataloging-product-data/virtualenv
     
     
