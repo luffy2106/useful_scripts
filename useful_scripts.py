@@ -256,4 +256,10 @@ ln -s /data/E-cataloging-product-data/virtualenv /home/tkdang/E-cataloging-produ
 
 After this command, in e-cataloging-pipe folder there will be a symbolic link named virtualenv, which link to /data/E-cataloging-product-data/virtualenv
     
+"""
+Download package whl to the specfic location before installing
+"""
+pip download [requirement] --dest . --extra-index-url https://download.pytorch.org/whl/cu116
+Ex: 
+pip download torch torchvision torchaudio --dest . --extra-index-url https://download.pytorch.org/whl/cu116
     
