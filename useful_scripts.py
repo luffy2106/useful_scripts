@@ -271,3 +271,8 @@ Solution 1:
 Solution 2:
 - export TMPDIR=/home/repldba/tempfiles/
     
+"""
+Force pip to use a different tmp directory that resides on a partition where we have a lot of free space.
+"""
+
+TMPDIR=/data/tmp pip install -r requirements.txt
