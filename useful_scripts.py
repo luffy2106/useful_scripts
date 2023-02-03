@@ -262,4 +262,12 @@ Download package whl to the specfic location before installing
 pip download [requirement] --dest . --extra-index-url https://download.pytorch.org/whl/cu116
 Ex: 
 pip download torch torchvision torchaudio --dest . --extra-index-url https://download.pytorch.org/whl/cu116
+
+"""
+set up variable
+"""
+Solution 1:
+- Go to /etc/environment file and set up. ex : TMPDIR=/home/repldba/tempfiles
+Solution 2:
+- export TMPDIR=/home/repldba/tempfiles/
     
