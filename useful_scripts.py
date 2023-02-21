@@ -270,7 +270,15 @@ Solution 1:
 - Go to /etc/environment file and set up. ex : TMPDIR=/home/repldba/tempfiles
 Solution 2:
 - export TMPDIR=/home/repldba/tempfiles/
-    
+
+"""
+Set up path for global varialbe
+"""
+Open bashrc file by nano ~/.bashrc then add the line to specify the path you want to use for the variable. Ex :  
+- If you want to set up path for global python : export PATH=$PATH:/usr/bin/python2.7
+- If you want to set up path for global npm : export PATH=$PATH:/usr/bin/npm
+
+
 """
 Force pip to use a different tmp directory that resides on a partition where we have a lot of free space.
 """
