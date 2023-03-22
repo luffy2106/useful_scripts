@@ -284,3 +284,10 @@ Force pip to use a different tmp directory that resides on a partition where we 
 """
 TMPDIR=/data/tmp pip install -r requirements.txt
 More info : https://issamemari.github.io/jekyll/update/2022/03/16/pip-install-no-space-left.html
+        
+"""
+Get into the default terminal of Linux
+"""
+
+/bin/bash
+
