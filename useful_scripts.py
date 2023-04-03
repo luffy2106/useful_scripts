@@ -62,9 +62,12 @@ https://www.liquidweb.com/kb/how-to-install-pyenv-on-ubuntu-18-04/
 In case you have errors while install lib for virutal env which is related to vendored-six
 Solution 1:
 After set python version you want to global, remember to install pipenv
-pip install pipenv
+- pip install pipenv
 
-Solution 2:
+Solution 2:(more effective)
+Create virtual environment and :
+- curl -sS https://bootstrap.pypa.io/get-pip.py |  python    
+More solution:
 https://bnikolic.co.uk/blog/python/pip/2022/02/21/vendored-six.html
 
 """
