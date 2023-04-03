@@ -291,3 +291,10 @@ Get into the default terminal of Linux
 
 /bin/bash
 
+"""
+copy file from local machine to WSL
+"""
+Go to the place in WSL where you want to copy file there, then type:
+- cp /mnt/c/Users/tkdang/Downloads/resnet101-FPN_nuclaynet_2x_AMP.zip .
+
+
