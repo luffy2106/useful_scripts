@@ -301,3 +301,11 @@ Go to the place in WSL where you want to copy file there, then type:
 - cp /mnt/c/Users/tkdang/Downloads/resnet101-FPN_nuclaynet_2x_AMP.zip .
 
 
+"""
+Docker
+"""
+If you want to see logs of docker container:
+- docker logs <container_id>
+If you want to see logs of docker, but the docker exit immediately => Try starting a new container and dropping into a shell
+- docker run --interactive --tty --entrypoint /bin/sh nginx:latest(docker container name/ID)
+- docker run -it image_name sh
