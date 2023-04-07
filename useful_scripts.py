@@ -309,3 +309,41 @@ If you want to see logs of docker container:
 If you want to see logs of docker, but the docker exit immediately => Try starting a new container and dropping into a shell
 - docker run --interactive --tty --entrypoint /bin/sh nginx:latest(docker container name/ID)
 - docker run -it image_name sh
+
+"""
+Elastic Search
+"""
+1. List all docs name in an index:
+curl -H 'Content-Type: application/json' -XGET 'http://localhost:9200/index_name/_search?size=10000&filter_path=hits.hits._source' -d '
+{
+    "query": {
+        "match_all": {}
+    },
+   "_source": ["filename"]
+}
+'
+
+2. List all id of docs in an index
+curl -X GET "localhost:9200/k_catalog/_search?pretty" -H 'Content-Type: application/json' -d'
+{
+    "query": {
+        "match_all": {}
+    },
+  "stored_fields": [
+    "_source.filename"
+  ]
+}
+'
+
+3. Delete all docs in an index
+
+curl -X GET "http://localhost:9200/<index_name>/_search" -H 'Content-Type: application/json' -d'
+{
+  "query": {
+    "match_all": {}
+  }
+}
+'
+
+
+
