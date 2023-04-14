@@ -345,5 +345,12 @@ curl -X GET "http://localhost:9200/<index_name>/_search" -H 'Content-Type: appli
 }
 '
 
+"""
+Useful tricks and library
+"""
+1. Use only one logger to debug
+- https://github.com/Delgan/loguru#structured-logging-as-needed
+
+
 
 
