@@ -346,6 +346,12 @@ curl -X GET "http://localhost:9200/<index_name>/_search" -H 'Content-Type: appli
 '
 
 """
+Enable docker connect to GPU
+"""
+- https://docs.docker.com/compose/gpu-support/
+
+
+"""
 Useful tricks and library
 """
 1. Use only one logger to debug
