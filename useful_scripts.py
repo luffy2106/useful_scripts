@@ -357,6 +357,14 @@ Useful tricks and library
 1. Use only one logger to debug
 - https://github.com/Delgan/loguru#structured-logging-as-needed
 
-
+"""
+Modify proxy in WSL
+"
+You need to modify 3 files:
+For download package:
+- ~/.bashrc
+- /etc/environment
+For git:
+- ~/.gitconfig
 
 
