@@ -371,4 +371,9 @@ For download package:
 For git:
 - ~/.gitconfig
 
+"""
+Back up and restore WSL
+"""
+
+https://www.virtualizationhowto.com/2021/01/wsl2-backup-and-restore-images-using-import-and-export/
 
