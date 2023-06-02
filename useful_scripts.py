@@ -317,7 +317,7 @@ docker rm $(docker ps -aq --filter ancestor=<name_docker_image>)
 """
 gunicorn
 """
-If you want to debug gnicorn, use "preload"
+If you want to debug gunicorn, use "preload"
 ```
 gunicorn app:application --preload -b 0.0.0.0:5000 
 ```
