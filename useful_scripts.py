@@ -315,6 +315,13 @@ docker rm $(docker ps -aq --filter ancestor=<name_docker_image>)
 ```
 
 """
+gunicorn
+"""
+If you want to debug gnicorn, use "preload"
+```
+gunicorn app:application --preload -b 0.0.0.0:5000 
+```
+"""
 Elastic Search
 """
 1. List all docs name in an index:
