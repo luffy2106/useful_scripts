@@ -70,6 +70,43 @@ Create virtual environment and :
 More solution:
 https://bnikolic.co.uk/blog/python/pip/2022/02/21/vendored-six.html
 
+
+"""
+Install poetry : better to manage python package than pyenv
+"""
+Install and usage:
+```
+https://python-poetry.org/docs/#installing-with-the-official-installer
+```
+Install virutual environment with requirement.txt:
+1. Go to your project directory and init project
+```
+cd pre-existing-project
+poetry init
+```
+2. pyproject.toml will be create, set up your virutal by this tutor
+```
+https://python-poetry.org/docs/basic-usage/
+```
+3. Activate virtual env
+```
+poetry shell
+```
+4. Once you are inside the virtualenv, you can use the following command to generate a poetry.lock file based on your existing dependencies:
+```
+poetry lock
+```
+5. After generating the poetry.lock file, you can use the following command to add the dependencies from your requirements.txt file to your virtualenv:
+```
+for item in $(cat requirements.txt); do poetry add "${item}"; done
+```
+6. Finally, you can use the following command to update your poetry.lock file with the new dependencies:
+```
+poetry lock
+```
+  
+
+
 """
 Enable GPU and install on WSL2 Window
 """
