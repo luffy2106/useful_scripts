@@ -104,7 +104,14 @@ for item in $(cat requirements.txt); do poetry add "${item}"; done
 ```
 poetry lock
 ```
-  
+7. Test virtualenv
+```
+poetry run python your_script.py
+```
+or
+```
+poetry run python
+```
 
 
 """
