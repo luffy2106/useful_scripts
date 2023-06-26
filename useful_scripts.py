@@ -361,9 +361,31 @@ docker rm $(docker ps -aq --filter ancestor=<name_docker_image>)
 """
 Docker tips and tricks
 """
+Genaral tricks
 ```
 https://chrislevn.github.io/dockerfile-practices/
 ```
+
+Optimize docker build from docker file:
+The --cache-from option in Docker allows you to specify a previously built image as a cache source for the current build. This can help speed up the build process by reusing layers from the cached image that are identical to the ones in the current build.
+
+Here's an example of how to use --cache-from:
+1. First, build your Docker image and tag it with a name and version number:
+```
+docker build -t my-image:v1 .
+```
+2. Next, make some changes to your code or dependencies, and rebuild the image using the --cache-from option:
+```
+docker build --cache-from my-image:v1 -t my-image:v2 .
+```
+In this command, we're telling Docker to use the my-image:v1 image as a cache source for the my-image:v2 build. If there are any identical layers between the two images, Docker will reuse them instead of rebuilding them.
+
+Note that if the my-image:v1 image is not available locally, Docker will try to pull it from the registry specified in the Dockerfile (FROM statement).
+3. Finally, run your updated container using the new image:
+```
+docker run -it my-image:v2
+```
+That's it! By using the --cache-from option, you can speed up your Docker builds by reusing identical layers from previously built images.
 
 
 """
