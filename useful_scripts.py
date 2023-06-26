@@ -359,6 +359,14 @@ docker rm $(docker ps -aq --filter ancestor=<name_docker_image>)
 ```
 
 """
+Docker tips and tricks
+"""
+```
+https://chrislevn.github.io/dockerfile-practices/
+```
+
+
+"""
 gunicorn
 """
 If you want to debug gunicorn, use "preload"
