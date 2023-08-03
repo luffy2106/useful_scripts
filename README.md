@@ -25,55 +25,59 @@ Then upgrade the repositories:
 ```
 sudo apt upgrade
 ```
-"""
-Create symbolic link in linux
-"""
-https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/
 
-    
-"""
-Fix missing and broken packages in linux
-"""
-Method 1 : 
-# Use the "fix-missing" option with "apt-get update" to run the updates and ensure the packages are up to date and there is no new version available for the packages.
+### Fix missing and broken packages in linux
+###### Method 1 : 
+Use the "fix-missing" option with "apt-get update" to run the updates and ensure the packages are up to date and there is no new version available for the packages.
+```
 sudo apt-get update --fix-missing
-# Once you are done with the update, execute the below command in order to force the package manager to find any missing dependencies or broken packages and install them.
+```
+Once you are done with the update, execute the below command in order to force the package manager to find any missing dependencies or broken packages and install them.
+```
 sudo apt-get install -f
+```
+Other method, check this link : 
+```
+https://linuxhint.com/apt_get_fix_missing_broken_packages/
+```
 
-Other method, check this link : https://linuxhint.com/apt_get_fix_missing_broken_packages/
+### Create symbolic link in linux
+```
+https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/
+```
 
+### Install pipreques:
 
-"""
-Install pipreques:
-
-A very useful package when a phase of development is done, Generating concise requirements is done automatically (it looks at the packages you're importing in your project directory): https://pypi.org/project/pipreqs/
-
-It's much better and more efficient than "pip freeze"
-"""
+A very useful package when a phase of development is done, Generating concise requirements is done automatically (it looks at the packages you're importing in your project directory): 
+```
 https://pypi.org/project/pipreqs/
-    
+```
+It's much better and more efficient than "pip freeze"
 
-"""
-Install pyenv : to manage python package
-"""
 
+### Install pyenv : to manage python package
+```
 https://www.liquidweb.com/kb/how-to-install-pyenv-on-ubuntu-18-04/
+```
 
 In case you have errors while install lib for virutal env which is related to vendored-six
-Solution 1:
+###### Solution 1:
 After set python version you want to global, remember to install pipenv
-- pip install pipenv
-
-Solution 2:(more effective)
-Create virtual environment and :
-- curl -sS https://bootstrap.pypa.io/get-pip.py |  python    
+```
+pip install pipenv
+```
+###### Solution 2:(more effective)
+Create virtual environment and download get-pip.py
+```
+curl -sS https://bootstrap.pypa.io/get-pip.py |  python    
+```
 More solution:
+```
 https://bnikolic.co.uk/blog/python/pip/2022/02/21/vendored-six.html
+```
 
+### Install poetry : better to manage python package than pyenv
 
-"""
-Install poetry : better to manage python package than pyenv
-"""
 Install and usage:
 ```
 https://python-poetry.org/docs/#installing-with-the-official-installer
@@ -112,32 +116,47 @@ or
 ```
 poetry run python
 ```
+ 
+### Enable GPU and install on WSL2 Window
 
-
-"""
-Enable GPU and install on WSL2 Window
-"""
-Solution 1(do not work 100%):
-- https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu
-
-Solution 2(work 100%, remember that install pytorch version which is suitable for cuda) 
-* 1st install nvidia driver on windows 
-* 2nd remove all nvidia files from WSL2: 
+###### Solution 1(do not work 100%):
+```
+https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu
+```
+###### Solution 2(work 100%, remember that install pytorch version which is suitable for cuda) 
+1. Install nvidia driver on windows 
+2. Remove all nvidia files from WSL2: 
+```
 sudo apt-get --purge remove "*cublas*" "*cufft*" "*curand*" \ "*cusolver*" "*cusparse*" "*npp*" "*nvjpeg*" "cuda*" "nsight*"  
 sudo apt-get --purge remove "*nvidia*"  
 sudo rm -rf /usr/local/cuda*  
 sudo apt-key del 7fa2af80  
 sudo apt-get autoremove
-sudo apt-get update 
-* 3rd download and install cuda-11.6 run from : 
+sudo apt-get update
+``` 
+3. download and install cuda-11.6 run from : 
+```
 https://developer.nvidia.com/cuda-11-6-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=runfile_local 
-* After cuda installations: 
+```
+4. Verify Cuda installation
+The following command should show Cuda and NVIDIA driver versions:
+```
+nvidia-smi
+```
+5. After cuda installations, install essential tools such as compilers, libraries, and build utilities required for building software. Also install cmake
+```
 sudo apt-get install build-essential cmake 
-* Open .bashrc file and add cuda path: 
+```
+6. Set up cuda as environment variable:
+Open .bashrc file and add Cuda path: 
+```
 export LD_LIBRARY_PATH="/usr/local/cuda-11.6/libnvvp:$LD_LIBRARY_PATH"  
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-11.6/bin:$PATH" 
-* Install pytorch for cuda 11.6: 
-pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116 
+```
+7. Install pytorch for cuda 11.6(optional): 
+```
+pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116 
+```
 
 """
 Virtual environments jupyterlab
