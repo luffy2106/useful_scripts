@@ -36,7 +36,7 @@ Once you are done with the update, execute the below command in order to force t
 ```
 sudo apt-get install -f
 ```
-##### Other method, check this link : 
+##### - Other method, check this link : 
 ```
 https://linuxhint.com/apt_get_fix_missing_broken_packages/
 ```
@@ -61,12 +61,12 @@ https://www.liquidweb.com/kb/how-to-install-pyenv-on-ubuntu-18-04/
 ```
 
 In case you have errors while install lib for virutal env which is related to vendored-six
-##### Solution 1:
+##### - Solution 1:
 After set python version you want to global, remember to install pipenv
 ```
 pip install pipenv
 ```
-##### Solution 2:(more effective)
+##### - Solution 2:(more effective)
 Create virtual environment and download get-pip.py
 ```
 curl -sS https://bootstrap.pypa.io/get-pip.py |  python    
@@ -119,11 +119,11 @@ poetry run python
  
 #### Enable GPU and install on WSL2 Window
 
-##### Solution 1(do not work 100%):
+##### - Solution 1(do not work 100%):
 ```
 https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu
 ```
-##### Solution 2(work 100%, remember that install pytorch version which is suitable for cuda) 
+##### - Solution 2(work 100%, remember that install pytorch version which is suitable for cuda) 
 1. Install nvidia driver on windows 
 2. Remove all nvidia files from WSL2: 
 ```
@@ -261,7 +261,7 @@ show_bounding_boxs(path, list_bounding_box)
 https://medium.com/@i_AnkurBiswas/pro-tips-for-visual-studio-code-to-be-productive-in-2018-d5252e914561
 ```
 #### Transfer files between server and host
-##### Download file from server to local
+##### - Download file from server to local
 Go to the location on the local computer:
 ```
 scp ecatdeployv2@172.16.255.27:/etc/systemd/system/log_back_20.7.txt . 
@@ -270,7 +270,7 @@ In case you have a large folder, it's better to compress and send it by tar :
 ```
 tar zcvf - MyBackups | ssh user@server "cat > ~/Research_e-catalog/classification_section_3/data/foo.tgz"
 ```
-##### Upload file from local to server
+##### - Upload file from local to server
 Go to the location on the local computer:
 ```
 scp /file/to/send username@remote:/where/to/put
@@ -331,10 +331,12 @@ pip download torch torchvision torchaudio --dest . --extra-index-url https://dow
 """
 set up variable
 """
-Solution 1:
-- Go to /etc/environment file and set up. ex : TMPDIR=/home/repldba/tempfiles
-Solution 2:
-- export TMPDIR=/home/repldba/tempfiles/
+- Solution 1:
+Go to /etc/environment file and set up. ex : TMPDIR=/home/repldba/tempfiles
+- Solution 2:
+```
+export TMPDIR=/home/repldba/tempfiles/
+```
 
 """
 Set up path for global varialbe
