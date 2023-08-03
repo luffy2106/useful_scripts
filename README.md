@@ -1,6 +1,6 @@
 # This is the useful scripts that need to reuse frequently
 
-#### Force Reconfigure or remove broken package in linux
+#### **<blue> Force Reconfigure or remove broken package in linux **
 
 ##### Reconfigure DPKG, the base package management system, with the following command:
 ```
