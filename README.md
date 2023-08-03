@@ -153,36 +153,40 @@ Open .bashrc file and add Cuda path:
 export LD_LIBRARY_PATH="/usr/local/cuda-11.6/libnvvp:$LD_LIBRARY_PATH"  
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-11.6/bin:$PATH" 
 ```
-7. Install pytorch for cuda 11.6(optional): 
+7. Verify cuda is well installed and configure 
+Install pytorch for cuda 11.6(optional): 
 ```
 pip3 install torch torchvision --extra-index-url https://download.pytorch.org/whl/cu116 
 ```
-
-"""
-Virtual environments jupyterlab
-"""
+Go to python environment and test
+```
+import torch
+cuda_version = torch.version.cuda
+print(f"CUDA Version: {cuda_version}")
+```
+It should show CUDA version
+#### Virtual environments jupyterlab
+```
 pip freeze > requirements.txt
 virtualenv --python=python3.6 .venv
 source .venv/bin/activate
 pip install jupyterlab ipykernel
 ipython kernel install --user --name=.venv
 jupyter lab --no-browser --ip="0.0.0.0" --port=9874 --NotebookApp.token='' --NotebookApp.password=''
+```
 
 
-
-"""
-Check to see to reasearch on if cuda and pytorch is compatible
-"""
+#### Check to see to reasearch on if cuda and pytorch is compatible
+```
 python -m detectron2.utils.collect_env
-
-"""
-This code convert pil images to bytes and vice versa. It's important when you want to save image
-to ram then send to API to process.
-
+```
+#### This code convert pil images to bytes and vice versa. It's important when you want to save image to ram then send to API to process.
 Follow this tutor:
+```
 https://jdhao.github.io/2019/07/06/python_opencv_pil_image_to_bytes/
-"""
-
+```
+Code implementation
+```
 from PIL import Image
 import io
 
@@ -200,12 +204,11 @@ print(byte_im)
 # convert bytes to pil image object
 image = Image.open(io.BytesIO(byte_im))
 image.show()
+```
 
 
-
-"""
-Delete similar files in folder
-"""
+#### Delete similar files in folder
+```
 from pathlib import Path
 import glob 
 
@@ -221,11 +224,10 @@ for file in files:
     else: 
         rem_file = Path(file) 
         rem_file.unlink() 
+```
 
-
-"""
-Draw list of bounding bounding box from list of coordinator
-"""
+#### Draw list of bounding bounding box from list of coordinator
+```
 import cv2
 from google.colab.patches import cv2_imshow
 def show_bounding_boxs(image_path, list_bounding_box):
@@ -252,47 +254,44 @@ def show_bounding_boxs(image_path, list_bounding_box):
 path = "V-216B-131-A-873_005_001-105.jpg"
 list_bounding_box = [(5,5,220,220)]
 show_bounding_boxs(path, list_bounding_box)
+```
 
+#### Tips for VScode
+```
+https://medium.com/@i_AnkurBiswas/pro-tips-for-visual-studio-code-to-be-productive-in-2018-d5252e914561
+```
+#### Transfer files between server and host
+##### Download file from server to local
+Go to the location on the local computer:
+```
+scp ecatdeployv2@172.16.255.27:/etc/systemd/system/log_back_20.7.txt . 
+```
+In case you have a large folder, it's better to compress and send it by tar : 
+```
+tar zcvf - MyBackups | ssh user@server "cat > ~/Research_e-catalog/classification_section_3/data/foo.tgz"
+```
+##### Upload file from local to server
+Go to the location on the local computer:
+```
+scp /file/to/send username@remote:/where/to/put
+```
+Another way: Use FileZilla (support skip if files already exist)
 
-"""
-Tips for VScode
-"""
-- https://medium.com/@i_AnkurBiswas/pro-tips-for-visual-studio-code-to-be-productive-in-2018-d5252e914561
-
-
-"""
-Transfer files between server and host
-"""
-Download file from server to local
-- (Go to location on the local computer):scp ecatdeployv2@172.16.255.27:/etc/systemd/system/log_back_20.7.txt . 
-- In case you have a large folder, it's better to compress and send it by tar : tar zcvf - MyBackups | ssh user@server "cat > ~/Research_e-catalog/classification_section_3/data/foo.tgz"
-Upload file from local to server
-- (Go to location on the local computer):scp /file/to/send username@remote:/where/to/put
-
-Another way : Use FileZilla (support skip if files are already exists)
-
-
-"""
-Set permanent DNS server in Ubuntu(To avoid wifi can not access in ubuntu)
-"""
-
+#### Set permanent DNS server in Ubuntu(To avoid wifi can not access in ubuntu)
+```
 https://www.tecmint.com/set-permanent-dns-nameservers-in-ubuntu-debian/
-
-"""
+```
 Set up remote ssh along with key vscode
-"""
-
+```
 https://towardsdatascience.com/5-steps-setup-vs-code-for-remote-development-via-ssh-from-windows-to-linux-b9bae9e8f904
+```
+#### Debugging in vscode 
 
-
-"""
-Debuggin in vscode 
-"""
 - Set up working environtment for debugging and running program in vs code : Bam to hop phim Ctrl+Shift+P => search interpreter => select path of intepreter python. 
 Cach 2, co the chon Python intepreter goc duoi cung ben phai man hinh(goc 17h).
 - Set up debugging(Luu y buoc nay chi nen ap dung trong truong hop debug ung dung, con voi file python thong thuong, buoc dau tien la du) : Bam to hop phim Ctrl+Shift+D, create 'launch.json' file(if there is not), file dc tao ra se o trong thu muc .vscode/launch.json, tai day ban co the chon
 python interpreter (thong qua bien envFile) va file ban muon debug (thong qua bien program). File mau launch.json se co noi dung nhu sau:
-
+```
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -312,7 +311,7 @@ python interpreter (thong qua bien envFile) va file ban muon debug (thong qua bi
         }
     ]
 }
-
+```
 """
 Create symbolic link
 """
