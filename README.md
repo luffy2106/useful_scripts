@@ -1,5 +1,7 @@
 # This is the useful scripts that need to reuse frequently
-<code style="color : greenyellow">text</code>
+<span style="color:red">
+Text content
+</span>
 
 
 ##### Reconfigure DPKG, the base package management system, with the following command:
