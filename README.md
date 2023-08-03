@@ -27,7 +27,7 @@ sudo apt upgrade
 ```
 
 #### Fix missing and broken packages in linux
-##### Method 1 : 
+##### - Method 1 : 
 Use the "fix-missing" option with "apt-get update" to run the updates and ensure the packages are up to date and there is no new version available for the packages.
 ```
 sudo apt-get update --fix-missing
