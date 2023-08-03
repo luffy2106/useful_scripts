@@ -1,6 +1,6 @@
 # This is the useful scripts that need to reuse frequently
 
-### Force Reconfigure or remove broken package in Linux
+#### Force Reconfigure or remove broken package in Linux
 Reconfigure DPKG, the base package management system, with the following command:
 ```
 sudo dpkg --configure -a
@@ -26,8 +26,8 @@ Then upgrade the repositories:
 sudo apt upgrade
 ```
 
-### Fix missing and broken packages in linux
-###### Method 1 : 
+#### Fix missing and broken packages in linux
+##### Method 1 : 
 Use the "fix-missing" option with "apt-get update" to run the updates and ensure the packages are up to date and there is no new version available for the packages.
 ```
 sudo apt-get update --fix-missing
@@ -41,7 +41,7 @@ Other method, check this link :
 https://linuxhint.com/apt_get_fix_missing_broken_packages/
 ```
 
-### Create symbolic link in linux
+#### Create symbolic link in linux
 ```
 https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/
 ```
