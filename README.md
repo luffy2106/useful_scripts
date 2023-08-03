@@ -473,3 +473,24 @@ For git:
 ```
 https://www.virtualizationhowto.com/2021/01/wsl2-backup-and-restore-images-using-import-and-export/
 ```
+
+#### Install package by poetry using external link
+Suppose that you have this command to install by pip
+```
+pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
+```
+If you want to install by poetry, you should add this to pyproject.toml
+```
+[tool.poetry.dependencies]
+python = "^3.9"
+torch = {version = "1.13.1+cu116", source = "pytorch-gpu-src"}
+torchvision = {version = "0.14.1+cu116", source = "pytorch-gpu-src"}
+[[tool.poetry.source]]
+name = "pytorch-gpu-src"
+url = "https://download.pytorch.org/whl/cu116"
+priority = "explicit"
+```
+Then run
+```
+poetry install
+```
