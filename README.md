@@ -461,11 +461,14 @@ https://github.com/Delgan/loguru#structured-logging-as-needed
 2. Modify proxy in WSL
 You need to modify 3 files:
 For download package:
-- ~/.bashrc
-- /etc/environment
+```
+~/.bashrc
+/etc/environment
+```
 For git:
-- ~/.gitconfig
-
+```
+~/.gitconfig
+```
 #### Back up and restore WSL
 ```
 https://www.virtualizationhowto.com/2021/01/wsl2-backup-and-restore-images-using-import-and-export/
