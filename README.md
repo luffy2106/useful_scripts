@@ -36,7 +36,7 @@ Once you are done with the update, execute the below command in order to force t
 ```
 sudo apt-get install -f
 ```
-Other method, check this link : 
+##### Other method, check this link : 
 ```
 https://linuxhint.com/apt_get_fix_missing_broken_packages/
 ```
@@ -46,7 +46,7 @@ https://linuxhint.com/apt_get_fix_missing_broken_packages/
 https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/
 ```
 
-### Install pipreques:
+#### Install pipreques:
 
 A very useful package when a phase of development is done, Generating concise requirements is done automatically (it looks at the packages you're importing in your project directory): 
 ```
@@ -55,18 +55,18 @@ https://pypi.org/project/pipreqs/
 It's much better and more efficient than "pip freeze"
 
 
-### Install pyenv : to manage python package
+#### Install pyenv : to manage python package
 ```
 https://www.liquidweb.com/kb/how-to-install-pyenv-on-ubuntu-18-04/
 ```
 
 In case you have errors while install lib for virutal env which is related to vendored-six
-###### Solution 1:
+##### Solution 1:
 After set python version you want to global, remember to install pipenv
 ```
 pip install pipenv
 ```
-###### Solution 2:(more effective)
+##### Solution 2:(more effective)
 Create virtual environment and download get-pip.py
 ```
 curl -sS https://bootstrap.pypa.io/get-pip.py |  python    
@@ -76,7 +76,7 @@ More solution:
 https://bnikolic.co.uk/blog/python/pip/2022/02/21/vendored-six.html
 ```
 
-### Install poetry : better to manage python package than pyenv
+#### Install poetry : better to manage python package than pyenv
 
 Install and usage:
 ```
@@ -117,13 +117,13 @@ or
 poetry run python
 ```
  
-### Enable GPU and install on WSL2 Window
+#### Enable GPU and install on WSL2 Window
 
-###### Solution 1(do not work 100%):
+##### Solution 1(do not work 100%):
 ```
 https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu
 ```
-###### Solution 2(work 100%, remember that install pytorch version which is suitable for cuda) 
+##### Solution 2(work 100%, remember that install pytorch version which is suitable for cuda) 
 1. Install nvidia driver on windows 
 2. Remove all nvidia files from WSL2: 
 ```
