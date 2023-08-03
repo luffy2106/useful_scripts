@@ -123,7 +123,7 @@ or
 poetry run python
 ```
  
-#### Enable GPU and install on WSL2 Window
+#### Install CUDA on WSL2 Window and enable GPU in Pytorch
 
 ##### - Solution 1(do not work 100%):
 ```
