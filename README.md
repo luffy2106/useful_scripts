@@ -1,8 +1,6 @@
 # This is the useful scripts that need to reuse frequently
-<span style="color:red">
-Text content
-</span>
 
+### Force Reconfigure or remove broken package in Linux
 
 ##### Reconfigure DPKG, the base package management system, with the following command:
 ```
