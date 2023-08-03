@@ -148,7 +148,11 @@ nvidia-smi
 sudo apt-get install build-essential cmake 
 ```
 6. Set up cuda as environment variable:
-Open .bashrc file and add Cuda path: 
+Open .bashrc file 
+```
+nano  ~/.bashrc
+```
+and add Cuda path: 
 ```
 export LD_LIBRARY_PATH="/usr/local/cuda-11.6/libnvvp:$LD_LIBRARY_PATH"  
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/local/cuda-11.6/bin:$PATH" 
