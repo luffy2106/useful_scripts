@@ -1,34 +1,31 @@
 # This is the useful scripts that need to reuse frequently
 
+#### Force Reconfigure or remove broken package in linux
 
-
-"""
-Force Reconfigure or remove broken package in linux
-"""
-# Reconfigure DPKG, the base package management system, with the following command:
-
+##### Reconfigure DPKG, the base package management system, with the following command:
+```
 sudo dpkg --configure -a
-
-# Check if DPKG marked some packages as needing a reinstall.
-
+```
+##### Check if DPKG marked some packages as needing a reinstall.
+```
 sudo dpkg -l | grep ^..R
-
-# If the command above returns a list of one or more packages, try removing the packages by typing:
-
+```
+##### If the command above returns a list of one or more packages, try removing the packages by typing:
+```
 sudo dpkg --purge --force-all libgbm1
-
-# After you finish troubleshooting, run the following command to clean up the system:
-
+```
+##### After you finish troubleshooting, run the following command to clean up the system:
+```
 sudo apt clean
-
-# Then update the repositories:
-
+```
+##### Then update the repositories:
+```
 sudo apt update
-
-# Then upgrade the repositories:
-
+```
+##### Then upgrade the repositories:
+```
 sudo apt upgrade
-
+```
 """
 Create symbolic link in linux
 """
