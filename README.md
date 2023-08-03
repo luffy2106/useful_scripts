@@ -41,7 +41,13 @@ sudo apt-get install -f
 https://linuxhint.com/apt_get_fix_missing_broken_packages/
 ```
 
-#### Create symbolic link in linux
+#### Create a symbolic link in Linux
+After this command, in e-cataloging-pipe folder, there will be a symbolic link named virtualenv, which links to /data/E-cataloging-product-data/virtualenv
+```
+ln -s [Source_File_Path] [Symbolic_Link_Path]
+ln -s /data/E-cataloging-product-data/virtualenv /home/tkdang/E-cataloging-product/e-cataloging-pipe
+```
+Reference:
 ```
 https://www.freecodecamp.org/news/symlink-tutorial-in-linux-how-to-create-and-remove-a-symbolic-link/
 ```
@@ -316,83 +322,71 @@ python interpreter (thong qua bien envFile) va file ban muon debug (thong qua bi
     ]
 }
 ```
-"""
-Create symbolic link
-"""
-ln -s [Source_File_Path] [Symbolic_Link_Path]
 
-ln -s /data/E-cataloging-product-data/virtualenv /home/tkdang/E-cataloging-product/e-cataloging-pipe
-
-After this command, in e-cataloging-pipe folder there will be a symbolic link named virtualenv, which link to /data/E-cataloging-product-data/virtualenv
-    
-"""
-Download package whl to the specfic location before installing
-"""
+#### Download package whl to the specfic location before installing
+```
 pip download [requirement] --dest . --extra-index-url https://download.pytorch.org/whl/cu116
-Ex: 
+```
+Ex:
+``` 
 pip download torch torchvision torchaudio --dest . --extra-index-url https://download.pytorch.org/whl/cu116
+```
 
-"""
-set up variable
-"""
-- Solution 1:
+#### Set up a variable
+
+##### - Solution 1:
 Go to /etc/environment file and set up. ex : TMPDIR=/home/repldba/tempfiles
-- Solution 2:
+##### - Solution 2:
 ```
 export TMPDIR=/home/repldba/tempfiles/
 ```
 
-"""
-Set up path for global varialbe
-"""
+#### Set up path for global variable
 Open bashrc file by nano ~/.bashrc then add the line to specify the path you want to use for the variable. Ex :  
 - If you want to set up path for global python : export PATH=$PATH:/usr/bin/python2.7
 - If you want to set up path for global npm : export PATH=$PATH:/usr/bin/npm
 Remember to apply change by command : .  ~/.bashrc
 
-"""
-Force pip to use a different tmp directory that resides on a partition where we have a lot of free space.
-"""
+#### Force pip to use a different tmp directory that resides on a partition where we have a lot of free space.
+```
 TMPDIR=/data/tmp pip install -r requirements.txt
-More info : https://issamemari.github.io/jekyll/update/2022/03/16/pip-install-no-space-left.html
-        
-"""
-Get into the default terminal of Linux
-"""
+```
+More info : 
+```
+https://issamemari.github.io/jekyll/update/2022/03/16/pip-install-no-space-left.html
+```        
 
-/bin/bash
-
-"""
-copy file from local machine to WSL
-"""
+#### Get into the default terminal of Linux
+```
+cd /bin/bash
+```
+#### Copy file from local machine to WSL
 Go to the place in WSL where you want to copy file there, then type:
-- cp /mnt/c/Users/tkdang/Downloads/resnet101-FPN_nuclaynet_2x_AMP.zip .
+```
+cp /mnt/c/Users/tkdang/Downloads/resnet101-FPN_nuclaynet_2x_AMP.zip .
+```
 
-
-"""
-Docker
-"""
+#### Docker
+##### Docker tips
 If you want to see logs of docker container:
-- docker logs <container_id>
+```
+docker logs <container_id>
+```
 If you want to see logs of docker, but the docker exit immediately => Try starting a new container and dropping into a shell
-- docker run --interactive --tty --entrypoint /bin/sh nginx:latest(docker container name/ID)
-- docker run -it image_name sh
+```
+docker run --interactive --tty --entrypoint /bin/sh nginx:latest(docker container name/ID)
+docker run -it image_name sh
+```
 If you want to delete all docker container which associate with a docker image:
 ```
 docker rm $(docker ps -aq --filter ancestor=<name_docker_image>)
 ```
-
-"""
-Docker tips and tricks
-"""
-Genaral tricks
+Docker tricks:
 ```
 https://chrislevn.github.io/dockerfile-practices/
 ```
-
-Optimize docker build from docker file:
+##### Optimize docker build from docker file:
 The --cache-from option in Docker allows you to specify a previously built image as a cache source for the current build. This can help speed up the build process by reusing layers from the cached image that are identical to the ones in the current build.
-
 Here's an example of how to use --cache-from:
 1. First, build your Docker image and tag it with a name and version number:
 ```
@@ -411,18 +405,15 @@ docker run -it my-image:v2
 ```
 That's it! By using the --cache-from option, you can speed up your Docker builds by reusing identical layers from previously built images.
 
-
-"""
-gunicorn
-"""
+#### gunicorn
 If you want to debug gunicorn, use "preload"
 ```
 gunicorn app:application --preload -b 0.0.0.0:5000 
 ```
-"""
-Elastic Search
-"""
+
+#### Elastic Search
 1. List all docs name in an index:
+```
 curl -H 'Content-Type: application/json' -XGET 'http://localhost:9200/index_name/_search?size=10000&filter_path=hits.hits._source' -d '
 {
     "query": {
@@ -431,8 +422,10 @@ curl -H 'Content-Type: application/json' -XGET 'http://localhost:9200/index_name
    "_source": ["filename"]
 }
 '
+```
 
 2. List all id of docs in an index
+```
 curl -X GET "localhost:9200/k_catalog/_search?pretty" -H 'Content-Type: application/json' -d'
 {
     "query": {
@@ -443,9 +436,9 @@ curl -X GET "localhost:9200/k_catalog/_search?pretty" -H 'Content-Type: applicat
   ]
 }
 '
-
+```
 3. Delete all docs in an index
-
+```
 curl -X GET "http://localhost:9200/<index_name>/_search" -H 'Content-Type: application/json' -d'
 {
   "query": {
@@ -453,22 +446,19 @@ curl -X GET "http://localhost:9200/<index_name>/_search" -H 'Content-Type: appli
   }
 }
 '
+```
 
-"""
-Enable docker connect to GPU
-"""
-- https://docs.docker.com/compose/gpu-support/
+#### Enable docker connect to GPU
+```
+https://docs.docker.com/compose/gpu-support/
+```
 
-
-"""
-Useful tricks and library
-"""
+#### Useful tricks and library
 1. Use only one logger to debug
-- https://github.com/Delgan/loguru#structured-logging-as-needed
-
-"""
-Modify proxy in WSL
-"
+```
+https://github.com/Delgan/loguru#structured-logging-as-needed
+```
+2. Modify proxy in WSL
 You need to modify 3 files:
 For download package:
 - ~/.bashrc
@@ -476,8 +466,7 @@ For download package:
 For git:
 - ~/.gitconfig
 
-"""
-Back up and restore WSL
-"""
-
+#### Back up and restore WSL
+```
 https://www.virtualizationhowto.com/2021/01/wsl2-backup-and-restore-images-using-import-and-export/
+```
