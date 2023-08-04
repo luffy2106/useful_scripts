@@ -449,9 +449,29 @@ curl -X GET "http://localhost:9200/<index_name>/_search" -H 'Content-Type: appli
 ```
 
 #### Enable docker connect to GPU
+1. If you use docker-compose to build
 ```
 https://docs.docker.com/compose/gpu-support/
 ```
+2. If you user docker file to build(highly recommend)
+Set up the NVIDIA Container Toolkit by running the following command:
+```
+sudo apt-get install -y nvidia-container-toolkit
+```
+After the installation is complete, restart Docker to apply the changes by running the following command:
+- If you use linux:
+```
+sudo systemctl restart docker
+```
+- If you use WSL:
+```
+sudo service docker restart
+```
+Verify that the NVIDIA Container Toolkit is installed correctly by running the following command(need to check that docker image is available on docker hub first):
+```
+docker run --gpus all nvidia/cuda:11.4.3-base-ubuntu20.04 nvidia-smi
+```
+It should show CUDA and driver version
 
 #### Useful tricks and library
 1. Use only one logger to debug
