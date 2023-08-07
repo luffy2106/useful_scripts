@@ -516,6 +516,22 @@ poetry install
 ```
 
 #### Connect to EC2 instance AWS:
+Follow this tutorial
 ```
 https://medium.com/@christyjacob4/using-vscode-remotely-on-an-ec2-instance-7822c4032cff
 ```
+Then add this to the log file as mentioned in the above link
+```
+Host CurieGPT_web_server
+  HostName 13.37.215.79
+  User ubuntu
+  IdentityFile C:\key_ssh\aviary_aws\aviary_ubuntu_key.pem
+```
+Then you need to fix the permission issuse in window
+```
+icacls aviary_ubuntu_key.pem /inheritance:r
+icacls aviary_ubuntu_key.pem /grant:r "<your_username_here>":F
+```
+Finally, do CTRL + Shift + P to choose the host name then connect to EC2 instance.
+Note:
+Remember that everytime you shut down an EC2 instance and relaunch it, the IP address change => should configure
