@@ -514,3 +514,8 @@ Then run
 ```
 poetry install
 ```
+
+#### Connect to EC2 instance AWS:
+```
+https://medium.com/@christyjacob4/using-vscode-remotely-on-an-ec2-instance-7822c4032cff
+```
