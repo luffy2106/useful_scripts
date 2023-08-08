@@ -94,17 +94,25 @@ Install virutual environment with requirement.txt:
 cd pre-existing-project
 poetry init
 ```
-2. pyproject.toml will be create, set up your virutal by this tutor
+2. pyproject.toml will be create, set up your virtualenv
 ```
-https://python-poetry.org/docs/basic-usage/
+poetry env use python
 ```
 3. Activate virtual env
 ```
 poetry shell
 ```
+You can follow this tutor for ref:
+```
+https://python-poetry.org/docs/basic-usage/
+```
 4. Once you are inside the virtualenv, you can use the following command to generate a poetry.lock file based on your existing dependencies:
 ```
 poetry lock
+```
+If you have file pyproject.toml, you can install dependency by:
+```
+poetry install
 ```
 5. After generating the poetry.lock file, you can use the following command to add the dependencies from your requirements.txt file to your virtualenv:
 ```
