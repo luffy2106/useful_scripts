@@ -543,3 +543,23 @@ icacls aviary_ubuntu_key.pem /grant:r "<your_username_here>":F
 Finally, do CTRL + Shift + P to choose the host name then connect to EC2 instance.
 Note:
 Remember that everytime you shut down an EC2 instance and relaunch it, the IP address change => should configure
+
+#### Install git lfs
+Adding the packagecloud repository
+```
+(. /etc/lsb-release &&
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh |
+sudo env os=ubuntu dist="${DISTRIB_CODENAME}" bash)
+```
+Installing packages
+```
+sudo apt-get install git-lfs
+```
+Check if it's installed successfully
+```
+git lfs version
+```
+Reference :
+```
+https://github.com/git-lfs/git-lfs/blob/main/INSTALLING.md
+```
