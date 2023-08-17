@@ -563,3 +563,13 @@ Reference :
 ```
 https://github.com/git-lfs/git-lfs/blob/main/INSTALLING.md
 ```
+
+#### Organize a good deeplearning project
+```
+https://neptune.ai/blog/how-to-organize-deep-learning-projects-best-practices
+```
+Install cookiecutter
+```
+pip install cookiecutter
+cookiecutter https://github.com/drivendata/cookiecutter-data-science
+```
