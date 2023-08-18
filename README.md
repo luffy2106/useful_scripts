@@ -573,3 +573,10 @@ Install cookiecutter
 pip install cookiecutter
 cookiecutter https://github.com/drivendata/cookiecutter-data-science
 ```
+
+#### Attach volumn to docker and connect to docker container by vscode
+Need to be updated
+```
+docker run --gpus all -it --name nvidia-cuda -v /home/tkdang/Assytem_projects/E-cataloging-v2/ms3-stamp-signature-detection:/home
+ nvidia/cuda:11.7.1-devel-ubuntu22.04
+```
