@@ -580,3 +580,7 @@ Need to be updated
 docker run --gpus all -it --name nvidia-cuda -v /home/tkdang/Assytem_projects/E-cataloging-v2/ms3-stamp-signature-detection:/home
  nvidia/cuda:11.7.1-devel-ubuntu22.04
 ```
+
+#### Error about CUDA
+- When ever you have error related to CUDA, try to use CPU first to debug.
+- Any errors related to 'srcIndex < srcSelectDimsiz' might be because of the dimension of tokenizer is not match to number of the features input of the pretrained model
