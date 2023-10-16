@@ -138,8 +138,13 @@ poetry run python
 https://ubuntu.com/tutorials/enabling-gpu-acceleration-on-ubuntu-on-wsl2-with-the-nvidia-cuda-platform#3-install-nvidia-cuda-on-ubuntu
 ```
 ##### - Solution 2(work 100%, remember that install pytorch version which is suitable for cuda) 
-1. Install nvidia driver on windows 
-2. Remove all nvidia files from WSL2: 
+1. Install nvidia driver on windows
+- type "dxdiag" in the searchbar, then click on Affichage 2, see "Nom" to know the name of your NVIDIA card
+- Go to the following website and download NVIDIA drive(remember to choose the driver which is suitable to your card)
+```
+https://www.nvidia.com/download/find.aspx# 
+```
+3. Remove all nvidia files from WSL2: 
 ```
 sudo apt-get --purge remove "*cublas*" "*cufft*" "*curand*" \ "*cusolver*" "*cusparse*" "*npp*" "*nvjpeg*" "cuda*" "nsight*"  
 sudo apt-get --purge remove "*nvidia*"  
