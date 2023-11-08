@@ -589,3 +589,8 @@ docker run --gpus all -it --name nvidia-cuda -v /home/tkdang/Assytem_projects/E-
 #### Error about CUDA
 - When ever you have error related to CUDA, try to use CPU first to debug.
 - Any errors related to 'srcIndex < srcSelectDimsiz' might be because of the dimension of tokenizer is not match to number of the features input of the pretrained model
+
+#### Note about unicorn and gunicorn
+- If you use unicorn, gurnicorn and pyenv to create your virtual environment, remember to install unicorn, gurnicorn after you create virtualenv, dont install these lib on pyenv, otherwise gunicorn/uvicorn will keep using library in pyenv eventhough you already activate virtual environment.
+- If you already install unicorn/gurnicorn in pyenv, uninstall them
+
