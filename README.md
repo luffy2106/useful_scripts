@@ -612,4 +612,5 @@ Some useful pdb commands are:
 - c(ontinue): Continue execution until a breakpoint is encountered.
 - p(rint) <expression>: Evaluate and print the Python expression.
 - q(uit): Quit the debugger and exit.
+
 Remember to remove or comment out the line import pdb; pdb.set_trace() when you're done debugging.
