@@ -614,3 +614,7 @@ Some useful pdb commands are:
 - q(uit): Quit the debugger and exit.
 
 Remember to remove or comment out the line import pdb; pdb.set_trace() when you're done debugging.
+
+#### Note when working with huggingface dataset
+
+Sometimes when you work with Hugging Face dataset and use map function. The will be some exception parse. Don't try to return None value in the exception catch. Take a look at the features of the hugging face dataset and put empty value for the exceptional case. Then you can filter by the condition later. If you return None on the exceptional case, you will have the KeyError problem.
