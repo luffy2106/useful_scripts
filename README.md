@@ -591,6 +591,16 @@ docker run --gpus all -it --name nvidia-cuda -v /home/tkdang/Assytem_projects/E-
 - Any errors related to 'srcIndex < srcSelectDimsiz' might be because of the dimension of tokenizer is not match to number of the features input of the pretrained model
 
 #### Note about unicorn and gunicorn
-- If you use unicorn, gurnicorn and pyenv to create your virtual environment, remember to install unicorn, gurnicorn after you create virtualenv, dont install these lib on pyenv, otherwise gunicorn/uvicorn will keep using library in pyenv eventhough you already activate virtual environment.
+- If you use unicorn, gurnicorn and pyenv to create your virtual environment, remember to install unicorn, gurnicorn after you create virtualenv, dont install these lib on pyenv, otherwise gunicorn/uvicorn will keep using the library in pyenv eventhough you already activate virtual environment.
 - If you already install unicorn/gurnicorn in pyenv, uninstall them
 
+#### Debugging by command line python 
+To run a command line program but stop at a breakpoint, you can use a debugger. Python comes with a built-in debugger called pdb (Python DeBugger).
+- First, insert this line in your code where you want the execution to stop:
+```
+import pdb; pdb.set_trace()
+```
+- Then, run your Python script from the command line like you normally would. The program will execute until it hits the pdb.set_trace() line, and then it will enter the debugger.
+```
+python your_script.py
+```
