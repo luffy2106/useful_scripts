@@ -604,3 +604,12 @@ import pdb; pdb.set_trace()
 ```
 python your_script.py
 ```
+The program will execute until it hits the pdb.set_trace() line, and then it will enter the debugger. You'll see a (Pdb) prompt where you can type commands to inspect variables, step over lines, etc.
+
+Some useful pdb commands are:
+- n(ext): Execute the next line.
+- s(tep): Execute and step into function.
+- c(ontinue): Continue execution until a breakpoint is encountered.
+- p(rint) <expression>: Evaluate and print the Python expression.
+- q(uit): Quit the debugger and exit.
+Remember to remove or comment out the line import pdb; pdb.set_trace() when you're done debugging.
