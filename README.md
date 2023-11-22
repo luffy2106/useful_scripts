@@ -618,3 +618,27 @@ Remember to remove or comment out the line import pdb; pdb.set_trace() when you'
 #### Note when working with huggingface dataset
 
 Sometimes when you work with Hugging Face dataset and use map function. The will be some exception parse. Don't try to return None value in the exception catch. Take a look at the features of the hugging face dataset and put empty value for the exceptional case. Then you can filter by the condition later. If you return None on the exceptional case, you will have the KeyError problem.
+
+
+#### Debugging in docker running background
+
+Dockerd is the command line to show the logs of docker deamon,very important if you want to debug docker deamon.
+
+For example, if you can not restart docker service or have an error like this:
+```
+docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+```
+you should use this command to see the log
+```
+sudo dockerd
+```
+Normally the solution is this(try and type dockerd again to see if it resolved)
+```
+sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+sudo update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
+```
+Reference:
+```
+https://forums.docker.com/t/failing-to-start-dockerd-failed-to-create-nat-chain-docker/78269
+```
+
