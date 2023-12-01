@@ -641,4 +641,7 @@ Reference:
 ```
 https://forums.docker.com/t/failing-to-start-dockerd-failed-to-create-nat-chain-docker/78269
 ```
+### Note about gitlab push
+
+If you use ssh to push instead of HTTP, you don't have to enter your id and pass again and again 
 
