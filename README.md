@@ -418,6 +418,21 @@ docker run -it my-image:v2
 ```
 That's it! By using the --cache-from option, you can speed up your Docker builds by reusing identical layers from previously built images.
 
+##### Clean docker 
+
+If you want to see how much docker take the size of the system:
+```
+docker system df
+```
+If you want to clear all docker data
+```
+sudo docker system prune -a
+```
+If you want to clear all docker volumn only
+```
+sudo docker system prune -a --volumes
+```
+
 #### gunicorn
 If you want to debug gunicorn, use "preload"
 ```
