@@ -660,3 +660,22 @@ https://forums.docker.com/t/failing-to-start-dockerd-failed-to-create-nat-chain-
 
 If you use ssh to push instead of HTTP, you don't have to enter your id and pass again and again 
 
+### Config management using hydra
+Key Features of Hydra:
+- Compose your configuration dynamically: With Hydra, you can create hierarchical configurations by mixing multiple declared configuration files, which are selected dynamically at runtime.
+- Extensible and Pluggable: Hydra is designed to be easily extensible. You can add new capabilities by installing plugins.
+- Command Line Overrides: Hydra provides a simple override syntax that allows developers to alter the configuration via command line arguments.
+- Multirun: Launch your application multiple times with different arguments.
+
+Here is a basic example of how you might use Hydra in a Python script:
+```
+from omegaconf import DictConfig
+import hydra
+
+@hydra.main(config_path="config.yaml")
+def my_app(cfg : DictConfig) -> None:
+    print(cfg.pretty())
+
+if __name__ == "__main__":
+    my_app()
+```
