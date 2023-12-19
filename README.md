@@ -664,9 +664,14 @@ Reference:
 ```
 https://forums.docker.com/t/failing-to-start-dockerd-failed-to-create-nat-chain-docker/78269
 ```
-### Note about gitlab push
-
-If you use ssh to push instead of HTTP, you don't have to enter your id and pass again and again 
+### Note about gitlab 
+Gitlab push
+- If you use ssh to push instead of HTTP, you don't have to enter your id and pass again and again 
+Docker pull gitlab
+- If you want to pull the docker image from the gitlab, you need to login first
+```
+docker login vortex-gitlab.assystem.com:5005
+```
 
 ### Config management using hydra
 Key Features of Hydra:
