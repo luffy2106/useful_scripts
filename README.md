@@ -424,6 +424,10 @@ If you want to see how much docker take the size of the system:
 ```
 docker system df
 ```
+If you want to clear the darling images
+```
+docker image prune
+```
 If you want to clear all docker data
 ```
 sudo docker system prune -a
