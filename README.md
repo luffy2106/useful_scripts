@@ -432,6 +432,10 @@ If you want to clear all docker data
 ```
 sudo docker system prune -a
 ```
+If you want to clear all docker cache only
+```
+docker system prune
+```
 If you want to clear all docker volumn only
 ```
 sudo docker system prune -a --volumes
