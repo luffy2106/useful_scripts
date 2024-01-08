@@ -428,6 +428,10 @@ If you want to clear the darling images
 ```
 docker image prune
 ```
+If you want to remove all unused build cache, including dangling images and unused containers
+```
+docker builder prune --all
+```
 If you want to clear all docker data
 ```
 sudo docker system prune -a
