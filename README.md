@@ -432,7 +432,7 @@ If you want to remove all unused build cache, including dangling images and unus
 ```
 docker builder prune --all
 ```
-If you want to clear all docker data
+If you want to clear all docker data(you should not do it if you want to reuse the cache layer of the last build
 ```
 sudo docker system prune -a
 ```
