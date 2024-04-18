@@ -696,3 +696,33 @@ def my_app(cfg : DictConfig) -> None:
 if __name__ == "__main__":
     my_app()
 ```
+
+
+### Rule to choose the model which is suitable for your current hardware
+1. Estimate the memory
+- By tool
+```
+https://huggingface.co/docs/accelerate/main/en/usage_guides/model_size_estimator
+```
+- By rule of thumps(if the model is named something like : google/gemma-7b-it, mistralai/Mistral-7B-Instruct-v0.1
+Type of model           data type      Memory needed(GB)                               
+7b                       float 16            14
+8b                       float 16            16
+7b                       int8                7
+8b                       int8                8
+- context_size : written on the repo of the model(sometimes it isn't written)
+Example:(in here it is written : 32k context window (vs 8k context in v0.1))
+```
+https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2
+```
+- vocab_size : go to the repo of the model -> files and version -> take a look at "vocab_size"
+2. Evaluate the performance
+- Evaluate by vote(take a look at Arena Elo)
+```
+https://chat.lmsys.org/?leaderboard=
+```
+- Evaluate by accuracy(Take a look at Accuracy)
+```
+https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard
+```
+
