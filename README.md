@@ -446,7 +446,7 @@ sudo docker system prune -a --volumes
 ```
 ##### GPU on docker
 
-If you want to enable GPU in docker container when run docker compose, go to docker-compose.yaml file and add to each services for example(check "added" line"
+If you want to enable GPU in docker container when run docker compose, go to docker-compose.yaml file and add to each services for example(check "added" lines)
 
 ```
   inference-server:
