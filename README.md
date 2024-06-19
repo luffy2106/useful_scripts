@@ -444,6 +444,71 @@ If you want to clear all docker volumn only
 ```
 sudo docker system prune -a --volumes
 ```
+# GPU on docker
+
+If you want to enable GPU in docker container when run docker compose, go to docker-compose.yaml file and add to each services for example(check "added" line"
+
+```
+  inference-server:
+    build:
+      dockerfile: docker/inference/Dockerfile.server
+      context: .
+      target: dev
+    image: oasst-inference-server:dev
+    environment:
+      NVIDIA_VISIBLE_DEVICES: all   # Added
+      PORT: 8000
+      REDIS_HOST: inference-redis
+      POSTGRES_HOST: inference-db
+      POSTGRES_DB: oasst_inference
+      DEBUG_API_KEYS: "0000"
+      TRUSTED_CLIENT_KEYS: "6969"
+      ALLOW_DEBUG_AUTH: "True"
+      API_ROOT: "http://localhost:8000"
+    volumes:
+      - "./oasst-shared:/opt/inference/lib/oasst-shared"
+      - "./inference/server:/opt/inference/server"
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    depends_on:
+      inference-redis:
+        condition: service_healthy
+      inference-db:
+        condition: service_healthy
+    profiles: ["inference"]
+    # Added
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+
+
+  inference-worker:
+    build:
+      dockerfile: docker/inference/Dockerfile.worker-full
+      context: .
+    image: oasst-inference-worker:dev
+    environment:
+      API_KEY: "0000"
+      MODEL_CONFIG_NAME: ${MODEL_CONFIG_NAME:-distilgpt2}
+      BACKEND_URL: "ws://inference-server:8000"
+      PARALLELISM: 2
+    volumes:
+      - "./oasst-shared:/opt/inference/lib/oasst-shared"
+      - "./inference/worker:/opt/inference/worker"
+    profiles: ["inference"]
+    # Added
+    runtime: nvidia
+    deploy:
+      replicas: 1
+      resources:
+        reservations:
+          devices:
+            - capabilities: [GPU]
+```
 
 #### gunicorn
 If you want to debug gunicorn, use "preload"
