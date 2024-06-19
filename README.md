@@ -398,6 +398,10 @@ Docker tricks:
 ```
 https://chrislevn.github.io/dockerfile-practices/
 ```
+Sometimes the docker container don't have the nessesary package for example(sudo, torch, nvidia-smi ...), you can install it without getting into docker container. Replace a7bda4fe6c61 by docker id of docker container
+```
+docker exec -u root -it a7bda4fe6c61 pip install torch
+```
 ##### Optimize docker build from docker file:
 The --cache-from option in Docker allows you to specify a previously built image as a cache source for the current build. This can help speed up the build process by reusing layers from the cached image that are identical to the ones in the current build.
 Here's an example of how to use --cache-from:
