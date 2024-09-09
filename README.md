@@ -422,6 +422,11 @@ docker run -it my-image:v2
 ```
 That's it! By using the --cache-from option, you can speed up your Docker builds by reusing identical layers from previously built images.
 
+##### Debug docker
+If you want to run your docker image in debug mode
+```
+docker run -it --rm --entrypoint /bin/bash vllm_mistral_nemo:latest
+```
 ##### Clean docker 
 
 If you want to see how much docker take the size of the system:
