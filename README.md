@@ -82,7 +82,12 @@ More solution:
 https://bnikolic.co.uk/blog/python/pip/2022/02/21/vendored-six.html
 ```
 
-#### Install poetry : better to manage python package than pyenv
+#### Install pyenv on AWS EC2
+```
+https://gist.github.com/norsec0de/b863e2d99e251b848b5e9fece1c45f1a
+```
+
+#### Install poetry : better to manage python package than requirement.txt
 
 Install and usage:
 ```
