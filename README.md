@@ -805,3 +805,21 @@ https://chat.lmsys.org/?leaderboard=
 https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard
 ```
 
+### Install python by pyenv in AWS EC2
+
+- Follow this tutorial:
+```
+https://gist.github.com/norsec0de/b863e2d99e251b848b5e9fece1c45f1a
+```
+- After verify the pyenv install successfully, try to check the location of openssl 
+```
+openssl version -d
+```
+If the result is "/opt/conda/ssl", try this
+```
+CPPFLAGS="-I/opt/conda/ssl/include" \
+LDFLAGS="-L/opt/conda/ssl/lib" \
+pyenv install -v 3.10.0
+```
+otherwise replace the right location of openssl
+
